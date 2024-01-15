@@ -1,3 +1,8 @@
+// Описаний в документації
+import SimpleLightbox from 'simplelightbox';
+// Додатковий імпорт стилів
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -85,42 +90,8 @@ function createMarkup(arr) {
 
 gallery.insertAdjacentHTML('beforeend', createMarkup(images));
 
-// gallery.addEventListener('click', onClick);
-
-// function onClick(evt) {
-//   console.dir(evt.target);
-//   evt.preventDefault();
-
-//   if (evt.target.nodeName !== 'IMG') {
-//     return;
-//   }
-
-//   const instance = basicLightbox.create(
-//     `
-//   <img
-//         class="modal-img"
-//         src="${evt.target.dataset.source}"
-//         alt="${evt.target.alt}"
-//         width="1280"
-//       />
-//     `,
-//     //перевикористання функції з привязкою до this
-//     {
-//       handler: null,
-//       onShow(instance) {
-//         this.handler = closeModal.bind(instance); // привязали this до instance
-//         document.addEventListener('keydown', this.handler);
-//       },
-//       onClose() {
-//         document.removeEventListener('keydown', this.handler);
-//       },
-//     }
-//   );
-//   instance.show();
-
-//   function closeModal(evt) {
-//     if (evt.code === 'Escape') {
-//       this.close();
-//     }
-//   }
-// }
+new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+});
