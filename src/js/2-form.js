@@ -14,6 +14,8 @@ function onSubmit(evt) {
     alert('Please, fill in all fields before sending!');
     return;
   }
+  const data = { email: email, message: message };
+  console.log(data);
 
   localStorage.removeItem(STORAGE_KEY);
   evt.currentTarget.reset();
