@@ -4,9 +4,6 @@ const STORAGE_KEY = 'feedback-form-state';
 form.addEventListener('submit', onSubmit);
 form.addEventListener('input', onInput);
 
-const email = form.elements.email.value.trim();
-const message = form.elements.message.value.trim();
-
 function onSubmit(evt) {
   evt.preventDefault();
 
